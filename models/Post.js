@@ -1,14 +1,13 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Plant extends Model {}
+class Post extends Model {}
 
-Plant.init(
+Post.init(
   {
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+      allowNull: true,
       validate: {
         isAlphanumeric: true,
       },
@@ -26,4 +25,4 @@ Plant.init(
   }
 );
 
-module.exports = Plant;
+module.exports = Post;

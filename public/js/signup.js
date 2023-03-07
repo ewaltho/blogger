@@ -14,7 +14,7 @@ document.querySelector("#sign-up-form").addEventListener("submit",e => {
         }
     }).then(res=>{
         if(res.ok){
-           location.href="/userplants"
+           location.href="/userposts"
         } else {
             console.log(err)
         }

@@ -13,7 +13,7 @@ document.querySelector("#signin-form").addEventListener("submit", e => {
         }
     }).then(res=>{
         if(res.ok){
-           location.href="/userplants"
+           location.href="/userposts"
         } else {
             alert("Incorrect username or password.")
         }
