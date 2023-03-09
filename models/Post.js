@@ -8,16 +8,16 @@ Post.init(
     title: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: {
-        isAlphanumeric: true,
-      },
+      // validate: {
+      //   isAlphanumeric: true,
+      // },
     },
     entry: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isAlphanumeric: true,
-      }
+      // validate: {
+      //   isAlphanumeric: true,
+      // }
     }
   },
   {

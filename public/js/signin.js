@@ -1,11 +1,11 @@
 document.querySelector("#signin-form").addEventListener("submit", e => {
     e.preventDefault();
     const loginObj = {
-        username:document.querySelector("#email").value,
+        email:document.querySelector("#email").value,
         password:document.querySelector("#password").value
     }
     console.log(loginObj)
-    fetch("/api/users/signin",{
+    fetch("/users/signin",{
         method:"POST",
         body:JSON.stringify(loginObj),
         headers:{
@@ -13,8 +13,9 @@ document.querySelector("#signin-form").addEventListener("submit", e => {
         }
     }).then(res=>{
         if(res.ok){
-           location.href="/userposts"
+           document.location.replace("/allposts")
         } else {
+            console.log(res)
             alert("Incorrect username or password.")
         }
     })

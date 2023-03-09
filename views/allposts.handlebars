@@ -1,0 +1,27 @@
+<header>
+    <h1>Blogger</h1>
+    <nav>
+        <!-- needs to route to logged in user's posts -->
+        <button type="button" class="header-button" id="profile-btn" onclick="window.location.href='/profile'">Profile</button>
+        <button type="button" class="header-button" id="new-post-btn" onclick="window.location.href='/newpost'">New Post</button>
+        <button type="button" class="header-button" id="signout-btn" onclick="window.location.href='/'">Sign Out</button>
+    </nav>
+</header>
+
+<main>
+    <div class="posts">
+        <div class="one-post">
+            {{#each posts}}
+            <div class="title">
+                {{title}}
+            </div>
+            <div class="entry">
+                {{entry}}
+            </div>
+            <div class="user">
+                <p>By: {{User.username}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</main>

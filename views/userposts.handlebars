@@ -1,12 +1,30 @@
 <header>
     <h1>Blogger</h1>
     <nav>
-        <button type="button">Home</button>
-        <button>New Post</button>
-        <button>Sign Out</button>
+        <button type="button" class="header-button" id="profile-btn" onclick="window.location.href=`/allposts`">Dashboard</button>
+        <button type="button" class="header-button" id="profile-btn" onclick="window.location.href=`/profile`">Profile</button>
+        <button type="button" class="header-button" id="new-post-btn" onclick="window.location.href='/newpost'">New Post</button>
+        <button type="button" class="header-button" id="signout-btn" onclick="window.location.href='/'">Sign Out</button>
     </nav>
 </header>
 
 <main>
-
+    <div class="user">
+        <p>{{userdata.username}}'s Page</p>
+    </div>
+    <div class="posts">
+        <div class="one-post">
+            {{#each userdata.Posts as |post|}}
+            <div class="title">
+                {{post.title}}
+            </div>
+            <div class="entry">
+                {{post.entry}}
+            </div>
+            <button type="button" id={{post.id}} class="delete-btn">Delete</button>
+            {{/each}}
+        </div>
+    </div>
 </main>
+
+<script src="/js/delete.js"></script>

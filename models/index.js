@@ -1,8 +1,12 @@
 const User = require("./User");
-const Post = require('./Post')
+const Post = require("./Post")
 
-Post.belongsTo(User)
+User.hasMany(Post);
+
+Post.belongsTo(User , {
+  onDelete: "CASCADE"
+});
 
 module.exports = {
-  User
+  User, Post
 };

@@ -68,9 +68,51 @@ header button:hover {
     border: 2px solid darkmagenta;
 }
 
+
+.title-card,
+.email-input,
+.pwd-input,
+.submit-button {
+    margin: 10px;
+}
+
+.title-card {
+    margin-top: 40px;
+}
+
+.submit-button {
+    border: none;
+    
+}
+
 footer {
     height: 5vh;
     text-align: center;
     color: darkmagenta;
 }
 
+.one-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    background: pink;
+    margin: 20px;
+}
+
+.title {
+    background: darkmagenta;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.entry {
+    padding: 20px;
+}
+
+.user {
+    text-align: center;
+}

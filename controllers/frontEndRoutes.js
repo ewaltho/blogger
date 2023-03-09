@@ -3,27 +3,50 @@ const router = express.Router();
 const { User, Post } = require("../models");
 
 router.get("/", (req, res) => {
-    res.render("home");
-  });
+  res.render("home");
+})
 
-router.get('/signin', (req, res) => {
-  res.render('signin');
+router.get("/signin", (req, res) => {
+  res.render("signin");
 });
 
-router.get('/signup', (req, res) =>{
+router.get("/signup", (req, res) =>{
   res.render("signup");
 });
 
-router.get('/userposts', (req, res) => {
-  User.findByPk(req.session.userId, {
+router.get("/newpost", (req,res) => {
+  res.render("newpost");
+});
+
+router.get("/allposts",(req,res)=>{
+  Post.findAll({
     include: {
-      model: Post
+        model: User,
     }
-  }).then((userdata) => {
-    // const hbsData = userdata.toJSON();
-    // res.render('userposts', hbsData);
-    res.json(userdata);
-  });
+}).then(userdata => {
+    console.log(userdata)
+    const hbsData = userdata.map((banana) => {
+      return banana.toJSON();
+    });
+    console.log('==============================')
+    console.log(hbsData)
+    res.render("allposts", {posts:hbsData})
 })
+});
+
+router.get("/profile", (req, res) =>{
+  User.findByPk(req.session.userId,{
+    include: {
+      model: Post,
+    }
+  }).then(userdata => {
+    console.log(userdata)
+    const hbsData = userdata.toJSON();
+    console.log('==============================')
+    console.log(hbsData)
+    res.render("userposts", {userdata:hbsData})
+  })
+});
+
 
 module.exports = router;

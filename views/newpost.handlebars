@@ -1,0 +1,31 @@
+<header>
+    <h1>Blogger</h1>
+    <nav>
+        <button type="button" class="header-button" id="profile-btn" onclick="window.location.href=`/allposts`">Dashboard</button>
+        <button type="button" class="header-button" id="profile-btn" onclick="window.location.href='/profile'">Profile</button>
+        <button type="button" class="header-button" id="signout-btn" onclick="window.location.href='/'">Sign Out</button>
+    </nav>
+</header>
+
+<main>
+    <div class="form">
+            <h1 class="title-card">New Post</h1>
+        <div class="input-card">
+            <form class="input-info" id="new-post-form">
+                <div class="title-input">
+                    <label for="title">Title:</label><br>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="pwd-input">
+                    <label for="entry">Entry:</label><br>
+                    <textarea type="text" id="entry" name="entry"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="submit-button" id="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+</main>
+
+<script src="/js/newpost.js"></script>

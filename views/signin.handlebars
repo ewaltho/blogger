@@ -9,20 +9,20 @@
         <div class="form">
             <h1 class="title-card">Sign In</h1>
         <div class="input-card">
-            <div class="input-info" id="signin-form">
-                <form class="email-input">
-                    <label for="email">Username:</label><br>
+            <form class="input-info" id="signin-form">
+                <div class="email-input">
+                    <label for="email">Email:</label><br>
                     <input type="text" id="email" name="email">
-                </form>
-                <form class="pwd-input">
+                </div>
+                <div class="pwd-input">
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password">
-                </form>
-                <form>
-                    <input type="submit" value="Submit" class="submit-button" id="submit-btn">
-                </form>
+                </div>
+                <div>
+                    <button type="submit" class="submit-button" id="submit-btn">Submit</button>
+                </div>
             <a href="/signup">Don't have an account? Create one here!</a>
-            </div>
+            </form>
         </div>
         </div>
     </main>
@@ -30,3 +30,5 @@
 <footer>
     <p>©Emma Waltho, 2023</p>
 </footer>
+
+<script src="/js/signin.js"></script>

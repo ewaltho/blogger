@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-// router.get("/sessionData", (req, res) => res.json(req.session));
+const userRoutes = require('./userController');
+router.use("/users", userRoutes)
 
-const apiRoutes = require("./api");
-router.use("/api", apiRoutes);
+const postRoutes = require('./postController');
+router.use("/posts", postRoutes)
 
 const frontEndRoutes = require("./frontEndRoutes");
 router.use("/", frontEndRoutes);
